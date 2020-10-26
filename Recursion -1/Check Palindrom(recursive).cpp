@@ -28,21 +28,22 @@ false
 
 #include <bits/stdc++.h>
 using namespace std;
-bool chp(char input[],int start,int end){
-    if(end<start)
+bool helper(char input[],int start,int end){
+ if(end<start)
         return true;
     if(input[start]!=input[end])
         return false;
     
-    bool ans=chp(input,start+1,end-1);
+    bool ans=helper(input,start+1,end-1);
     return ans;
 }
 bool checkPalindrome(char input[]) {
     // Write your code here
     int end=strlen(input)-1;
-    return chp(input,0,end);
+    return helper(input,0,end);
     
 }
+
 
 
 #include <iostream>

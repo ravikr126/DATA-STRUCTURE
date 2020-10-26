@@ -17,11 +17,56 @@ alc
 aaw
 kw
 ****************************
-/*
-1sst mwthod 
+
+//1ST ANS
+
 #include <string.h>
 using namespace std;
+char getChar(int n)
+{
+    return 'a'+(n-1);
+}
 
+void printAllPossibleCodesHelper(string input,string output,int m)
+{
+    if(input.empty())
+    {
+        cout<<output<<endl;
+        return;
+    }
+    int a = input[0]-'0';
+    output=output+getChar(a);
+    printAllPossibleCodesHelper(input.substr(1),output,m+1);
+    int b = ((input[0]-'0')*10)+(input[1]-'0');
+    if(b>=10 && b<=26)
+    {
+        output[m]=getChar(b);
+        printAllPossibleCodesHelper(input.substr(2),output,m+1);
+    }
+}
+
+void printAllPossibleCodes(string input) {
+    /*
+    Given the input as a string, print all its possible combinations. You do not need to return anything.
+    */
+    string output="";
+    printAllPossibleCodesHelper(input,output,0);
+}
+
+/*************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+//2ND ANS
 void help(string input, string output) {
     if(input.length() == 0) {
         cout << output << endl;
