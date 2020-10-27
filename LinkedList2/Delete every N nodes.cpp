@@ -59,28 +59,36 @@ public:
 
 node* skipMdeleteN(node  *head, int M, int N) {
     // Write your code here
-    if(head==NULL)
-        return NULL;
-    
-    node* pt=head;
-    for(int i=1;i<M;i++){
-        if(pt->next==NULL)
-            break;
-        pt=pt->next;
+   
+      if(head == NULL){
+        return head;
     }
-    
-    for(int i=1;i<=N;i++){
-        if(pt->next==NULL)
-            break;
-        node* t=pt->next;
-        pt->next=t->next;
-        t->next=NULL;
-        delete t;
+    Node* temp = head;
+    Node* tail = head;
+    int count1 = 1;
+    int count2 = 1;
+    while(temp != NULL){
+    	if(count1<=M){
+            tail = temp;
+            count1++;
+            temp = temp->next;
+        }else if(count2 <=N){
+            Node* t =temp;
+            count2++;
+            temp = temp->next;
+            delete t;
+        }else if(count1 == M+1 && count2 == N+1){
+            count1 = 1;
+            count2 = 1;
+            tail->next = temp; 
+        }
+        
     }
-    
-    node* ans=skipMdeleteN(pt->next,M,N);
+    tail->next = NULL;
+    if(M==0){
+        head =NULL;
+    }
     return head;
-
 }
 *******************
 #include <iostream>
