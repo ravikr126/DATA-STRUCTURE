@@ -67,7 +67,12 @@ Node* mergeTwoLLs(Node *head1, Node *head2) {
     Node* head = NULL;
     Node* tail = NULL;
     
+    if(head1==NULL)
+	return head2;
     
+    if(head2==NULL)
+        return head1;
+
     if(head1->data<=head2->data){
         head=head1;
         tail=head1;
