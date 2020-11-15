@@ -47,6 +47,9 @@ int subsetSumToK(int input[], int n, int output[][50], int k) {
     int s1,s2;
     s1=subsetSumToK(input+1,n-1,out1,k-input[0]);
     s2=subsetSumToK(input+1,n-1,out2,k);
+ // copy columns in first index of each row
+    // then copy first element of input 
+    // append the output1 array 
     for(int i=0;i<s1;i++){
         output[i][0]=out1[i][0]+1;
         output[i][1]=input[0];

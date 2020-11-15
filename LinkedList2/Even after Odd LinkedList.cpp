@@ -45,70 +45,55 @@ public:
     }
 };
 ***************/
-
 #include<bits/stdc++.h>
 using namespace std;
-node* arrange_LinkedList(node* head)
+Node* evenAfterOdd(Node* head)
 {
     //write your code here
     if (head==NULL)
         return NULL;
-    if(head->next==NULL)
-        return head;
-    
-    node* pt1=head;
-    
-    //Find first even
-    while(pt1->data % 2 !=0){
-        if(!pt1->next)
-            return head;
-        pt1=pt1->next;
-    }
-    
-    node* pt2=pt1->next;
-    
-    
-    while(pt2){
-        
-        if(pt2->data%2!=0){
-            
-            vector <int> tmp;
-            node* temp=pt1;
-            
-            while(temp!=pt2){
-                tmp.push_back(temp->data);
-                temp=temp->next;
-            }
-            
-            pt1->data=pt2->data;
-            
-            temp=pt1->next;
-            int k=0;
-            while(temp!=pt2->next){
-                temp->data=tmp[k];
-                temp=temp->next;
-                k++;
-            }
-            pt1=pt1->next;
-        }
-        pt2=pt2->next;
-    }
-    return head;
-}
-********
-#include <iostream>
+	Node *evenHead =NULL,*oddHead = NULL,*evenTail	=NULL, *oddTail = NULL;
 
-class Node
-{
-public:
-	int data;
-	Node *next;
-	Node(int data)
-	{
-		this->data = data;
-		this->next = NULL;
-	}
-};
+   while(head !=NULL)
+   {
+    if(head->data % 2 ==0)
+      {
+        if(evenHead==NULL)
+          {
+			  evenHead = head;
+			  evenTail= head;
+		  }
+		  else
+		  {
+			  evenTail->next =head;
+			  evenTail= evenTail->next ;
+		  }
+      }
+	else {
+			if(oddHead==NULL)
+			{
+				oddHead=head;
+				oddTail=head;
+			}
+			else{
+				oddTail->next=head;
+				oddTail=oddTail->next;
+			}
+	   }
+	head=head->next;
+   }
+   if(oddHead==NULL)
+   return evenHead;
+   else
+   {
+	   oddTail->next=evenHead;
+
+   }
+   return oddHead;
+}
+   
+   
+   
 
 using namespace std;
 #include "solution.h"

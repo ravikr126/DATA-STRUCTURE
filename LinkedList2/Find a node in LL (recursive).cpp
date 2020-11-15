@@ -54,23 +54,33 @@ public:
  
 *********/
 
-int indexOfNRecursive(Node *head, int n) {
+int findNodeRec(Node *head, int n)
+{
+	//Write your code here
+    
+
     /* Don't write main().
      * Don't read input, it is passed as function argument.
      * Return output and don't print it.
      * Taking input is handled automatically.
      */
-     if (head== NULL)
-     {
-         return -1;
-     }
- 	if(head== n)
-    {
-        return 1;
+    if(head==NULL){
+       return -1;
     }
-     int smallAns=indexOfNRecursive(head -> next, n);
-    return smallAns+1;
+    if(head->data==n){
+        return 0;
+    }
+    int smallAns = findNodeRec(head->next , n);
+    if(smallAns!= -1){
+        smallAns++;
+    }
+    else{
+        return -1;
+    }
+    return smallAns;
 }
+
+
 
 *****************
 #include <iostream>
