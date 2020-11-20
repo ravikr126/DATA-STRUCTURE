@@ -46,17 +46,18 @@ public:
 
 #include <bits/stdc++.h> 
 using namespace std; 
-node* eliminate_duplicate(node* head)
+Node *removeDuplicates(Node *head)
 {
-    //write your code here
-    node *temp = head;
+    
+    
+     Node *temp = head;
     if(head == NULL)
     {
         return head;
     }
     while(temp!=NULL)
     {
-        node *x=temp->next;
+        Node *x=temp->next;
         if(x==NULL)
         {
             return head;
@@ -73,7 +74,6 @@ node* eliminate_duplicate(node* head)
     }
     return head;
 }
-
 
 ***********************************************************************
 #include <iostream>
