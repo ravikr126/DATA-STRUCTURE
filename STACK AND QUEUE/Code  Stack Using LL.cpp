@@ -153,63 +153,72 @@ class Node {
     } 
 ***********/
 
-template <typename T>
+
 class Stack {
-    Node<T> *head;
-    int size;		// number of elements prsent in stack
-    
-    public :
-    
+	// Define the data members
+    Node *head;
+    int size;
+   public:
     Stack() {
+        // Implement the Constructor
+        head=NULL;
         size=0;
-        head = new Node<T>(0);
     }
-    
+
+	/*----------------- Public Functions of Stack -----------------*/
+
     int getSize() {
+        // Implement the getSize() function
         return size;
     }
-    
+
     bool isEmpty() {
-        if(size==0)
-            return true;
-        return false;
+        // Implement the isEmpty() function
+      if(size==0){
+          return true;
+      }
+       
+            return false;
     }
+
+    void push(int element) {
+        // Implement the push() function
     
-    void push(T element) {
-        Node<T>* newHead=new Node<T>(element);
+         Node* newHead=new Node(element);
         newHead->next=head;
         head=newHead;
         size++;
+            }
 
-    }
-    
-    T pop() {
-        // Return 0 if stack is empty. Don't display any other message
-        if(size==0)
-            return 0;
+    int pop() {
+        // Implement the pop() function
+        if(head==NULL){
+            return -1;
+        }
         else{
-            T ans=head->data;
-            Node<T>* temp=head->next;
-            head->next=NULL;
-            head=temp;
+            int temp=head->data;
+         
+             Node *temp1=head->next;
+        
+           head->next=NULL;
+         
+            head=temp1;
             size--;
-            return ans;
+            return temp;
         }
     }
-    
-    T top() {
-        // Return 0 if stack is empty. Don't display any other message
-        if(size==0)
-            return 0;
+
+    int top() {
+        // Implement the top() function
+        if(head==NULL){
+            return -1;
+        }
         else{
-            T ans=head->data;
-            return ans;
+            return head->data;
         }
     }
-    
-  
-    
 };
+
 //main func
 
 #include <iostream>

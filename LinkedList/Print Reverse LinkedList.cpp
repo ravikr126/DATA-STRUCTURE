@@ -47,13 +47,13 @@ public:
 };
 ***************/
 
-void print_linkedlist_spl(node*head)
+void printReverse(node*head)
 {
     //write your code here
     if (head == NULL)  
     return;  
   
-    print_linkedlist_spl(head->next);  
+    printReverse(head->next);  
   
     cout << head->data << " ";  
 }  
