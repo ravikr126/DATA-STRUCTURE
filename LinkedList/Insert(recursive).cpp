@@ -81,7 +81,7 @@ Node* takeinput() {
     return head;
 }
 
-Node* insertNodeRec(Node *head, int i, int data) {
+Node* insertNode(Node *head, int i, int data) {
     /* Don't write main().
      * Don't read input, it is passed as function argument.
      * Return output and don't print it.
@@ -101,7 +101,7 @@ Node* insertNodeRec(Node *head, int i, int data) {
         head->next=temp;
         return head;
     }
-    Node* curr=insertNodeRec(head->next,i-1,data);
+    Node* curr= insertNode(head->next,i-1,data);
     
     return head;
     

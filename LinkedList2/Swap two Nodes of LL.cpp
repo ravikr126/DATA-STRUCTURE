@@ -55,7 +55,8 @@ public:
 };
 ***************/
 
-node* swap_nodes(node *head,int i,int j)
+
+Node* swapNodes(Node*head,int i,int j)
 {
     //write your code here
     if(i>j){
@@ -66,17 +67,17 @@ node* swap_nodes(node *head,int i,int j)
     //Find nodes
     if(i==0){
         if(j==1){
-            node *cur=head->next;
+            Node*cur=head->next;
             head->next=cur->next;
             cur->next=head;
             return cur;
         }
-        node *pt=head;
+        Node*pt=head;
         for(int c=1;c<j;c++)
             pt=pt->next;
         
-        node *temp=head->next;
-        node *cur=pt->next;
+        Node*temp=head->next;
+        Node*cur=pt->next;
         
         head->next=cur->next;
         pt->next=head;
@@ -85,12 +86,12 @@ node* swap_nodes(node *head,int i,int j)
         
     }
     if(j-i==1){
-        node * pt=head;
+        Node* pt=head;
         for(int c=1;c<i;c++)
             pt=pt->next;
         
-        node* cur=pt->next;
-        node* cur1=cur->next;
+        Node* cur=pt->next;
+        Node* cur1=cur->next;
         
         cur->next=cur1->next;
         pt->next=cur1;
@@ -98,8 +99,8 @@ node* swap_nodes(node *head,int i,int j)
         return head;
         
     }
-    node* pt1=head;
-    node *pt2=head;
+    Node* pt1=head;
+    Node*pt2=head;
     
     for(int c=1;c<i;c++)
         pt1=pt1->next;
@@ -107,10 +108,10 @@ node* swap_nodes(node *head,int i,int j)
     for(int c=1;c<j;c++)
         pt2=pt2->next;
     
-    node *cur1=pt1->next;
-    node *cur2=pt2->next;
+    Node*cur1=pt1->next;
+    Node*cur2=pt2->next;
     
-    node *temp=cur1->next;
+    Node*temp=cur1->next;
     
     cur1->next=cur2->next;
     pt2->next=cur1;
@@ -120,6 +121,7 @@ node* swap_nodes(node *head,int i,int j)
     return head;
 
 }
+
 ****************
 #include <iostream>
 
