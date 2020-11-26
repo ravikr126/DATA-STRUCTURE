@@ -30,6 +30,77 @@ cf
 
 */
 
+//  1st approach 
+#include <string>
+using namespace std;
+
+int keypad(int num, string output[]){
+    /* Insert all the possible combinations of the integer number into the output string array. You do not need to
+    print anything, just return the number of strings inserted into the array.
+    */
+    
+    string value[] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    
+    if(num == 0) {
+        output[0] = "";
+        return 1;
+    }
+    
+    
+    int smallNum = keypad(num/10, output);
+    int c = value[num % 10].size();
+    
+    string a[smallNum];
+    
+    for(int i = 0;i < smallNum;i++) {
+        a[i] = output[i];
+    }
+    int k = 0;
+    for(int j = 0;j < c;j++){
+        for(int i = 0;i < smallNum;i++) {
+               output[k] = a[i] + value[num%10][j];
+               k++;
+        }
+    }
+    
+    return c*smallNum;
+}
+
+
+//2nd approach using recursion
+
+#include <string>
+using namespace std;
+string func(int n)
+{
+  string array[]={"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};  
+    return array[n];
+}
+  int keypad(int num, string output[])
+{
+    /* Insert all the possible combinations of the integer number into the output string array. You do not need to
+    print anything, just return the number of strings inserted into the array.
+    */
+    if(num==0){
+        output[0]="";
+        return 1;
+    }
+    // let take the exapmle of 23
+    int my_num=num%10;//3 for recursion
+    int ans=keypad(num/10,output);//ans will be 3 as string is "abc"
+    string op=func(my_num);//we assume that our faith has obtained "def"
+    for(int i=op.size()-1;i>=0;i--){
+        for(int j=0;j<ans;j++){
+            output[i*ans + j]=output[j]+op[i];
+            //output[2*3 + 0] = output[0]+op[2] == 'a'+'f' = af
+        }
+    }
+    return ans*op.size();
+    // return 3*3;
+}
+
+
+//  3rd approach  map approach
 #include <string>
 #include <unordered_map>
 #include <iostream>

@@ -45,16 +45,17 @@ public:
     }
 };
 ***************/
+
 void swap(int &a,int &b){
     int temp=a;
     a=b;
     b=temp;
 }
-node* bubble_sort_LinkedList_itr(node* head)
+Node* bubbleSort(Node* head)
 {
     //write your code here
-    node * i=head;
-    node * j=head;
+    Node * i=head;
+    Node * j=head;
     while(i){
         while(j->next){
             if(j->data>j->next->data){
