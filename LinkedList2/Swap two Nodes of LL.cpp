@@ -56,6 +56,31 @@ public:
 ***************/
 
 
+
+Node *swapNodes(Node *head, int i, int j)
+{
+    Node*temp=head;
+    Node*temp1=head;
+   int a=1;
+    int b=1;
+    while(a<=i)
+    {
+        temp=temp->next;
+        a++;
+    }
+    while(b<=j)
+    {
+        temp1=temp1->next;
+        b++;
+    }
+    int q=temp->data;
+    temp->data=temp1->data;
+    temp1->data=q;
+    return head;
+}
+
+
+//2nd method
 Node* swapNodes(Node*head,int i,int j)
 {
     //write your code here

@@ -58,18 +58,18 @@ public:
     }
 };
 ***************/
-node* revelist(node *head){
+Node* revelist(Node *head){
     
     if(head==NULL)
         return NULL;
     if(head->next==NULL)
         return head;
     
-    node *prev=head;
-    node *cur=head->next;
+    Node *prev=head;
+    Node *cur=head->next;
     prev->next=NULL;
     while(cur){
-        node *temp=cur->next;
+        Node *temp=cur->next;
         cur->next=prev;
         prev=cur;
         cur=temp;
@@ -78,16 +78,16 @@ node* revelist(node *head){
     return prev;
     
 }
-node* kReverse(node*head,int n)
+Node* kReverse(Node*head,int n)
 {
     //write your code here
     if(head==NULL)
         return NULL;
     int count=0;
     
-    node* front=head;
-    node* tail=head;
-    node* newHead;
+    Node* front=head;
+    Node* tail=head;
+    Node* newHead;
     
     for(int i=1;i<n;i++){
         if(tail->next==NULL)
@@ -95,15 +95,16 @@ node* kReverse(node*head,int n)
         else
             tail=tail->next;
     }
-    node *newtail=front;
-    node *temp=tail->next;
+    Node *newtail=front;
+    Node *temp=tail->next;
     tail->next=NULL;
     newHead=revelist(front);
     
-    node* ans=kReverse(temp,n);
+    Node* ans=kReverse(temp,n);
     newtail->next=ans;
     return newHead;
 }
+
 ********************
 
 #include <iostream>

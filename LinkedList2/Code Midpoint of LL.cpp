@@ -50,6 +50,9 @@ public:
 node* midpoint_linkedlist(node *head)
 {
     // Write your code here
+	 if(head==NULL || head->next == NULL)
+        return head;
+
      node* slow = head;
     node* fast = head->next;
     while(fast!=NULL&&fast->next!=NULL){
@@ -58,6 +61,33 @@ node* midpoint_linkedlist(node *head)
     }
     return slow;
 
+}
+
+
+//2nd method
+
+
+Node *midPoint(Node *head)
+{
+    // Write your code here
+    Node *temp = head;
+    int count(0);
+    while(temp!=NULL)
+    {
+        temp=temp->next;
+        count++;
+    }
+    
+    
+    temp = head;
+    int len = (count-1)/2;
+    
+    while(len>0)
+    {
+        temp = temp->next;
+        len--;
+    }
+    return temp;
 }
 
 *********
