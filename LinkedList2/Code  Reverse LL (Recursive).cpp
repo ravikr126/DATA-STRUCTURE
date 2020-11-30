@@ -45,15 +45,15 @@ public:
 };
 ***************/
 
-node *reverse_linked_list_rec(node *head)
+Node *reverseLinkedListRec(Node *head)
 {
-    //write your recursive code here
-    if(head==NULL || head->next==NULL){
+    if(head==NULL||head->next==NULL)
         return head;
-    }
-    node* temp = head;
-    head = reverse_linked_list_rec(head->next);
-    node* temp1 = head;
+    
+  
+     Node* temp = head;
+    head = reverseLinkedListRec(head->next);
+    Node* temp1 = head;
     while(temp1->next!=NULL){
         temp1=temp1->next;    
     }
