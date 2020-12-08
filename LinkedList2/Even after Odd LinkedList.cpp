@@ -89,6 +89,9 @@ Node* evenAfterOdd(Node* head)
 	   oddTail->next=evenHead;
 
    }
+
+	if(evenHead != NULL)
+		evenTail->next =NULL;
    return oddHead;
 }
    
