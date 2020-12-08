@@ -57,7 +57,7 @@ public:
 };
 ***************/
 
-node* skipMdeleteN(node  *head, int M, int N) {
+Node* skipMdeleteN(Node  *head, int M, int N) {
     // Write your code here
    
       if(head == NULL){
