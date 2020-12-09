@@ -20,11 +20,13 @@ while(startIndex<endIndex)
 	int tempStartIndex=startIndex+1;
 	int tempEndIndex=endIndex-1;
 	
-	while(tempStartIndex <= tempEndIndex && arr[tempEndIndex] == elementAtEnd
+	while(tempStartIndex <= tempEndIndex && arr[tempStartIndex] == elementAtStart)
+	tempStartIndex+=1;
+		
+	while(tempStartIndex <= tempEndIndex && arr[tempEndIndex] == elementAtEnd)
 	tempEndIndex-=1;
 	
-	int totalElementsFromStart = (tempStartIndex
-	-startIndex);
+	int totalElementsFromStart = (tempStartIndex-startIndex);
 	int totalElementsFromEnd=(endIndex-tempEndIndex);
 
 	numPair+=(totalElementsFromStart*totalElementsFromEnd);

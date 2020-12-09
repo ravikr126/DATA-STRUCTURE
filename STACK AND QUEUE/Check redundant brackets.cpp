@@ -36,8 +36,41 @@ false
 
 
 **************************************/
+//1st method
+#include <stack>
+#include<string.h>
+
+bool checkRedundantBrackets(string expression) {
+	// Write your code here
+    stack<char> s;
+
+    
+    int len=expression.size();
+    for(int i=0;i<len;i++)
+    {
+        int count=0;
+        s.push(expression[i]);
+         
+        if(expression[i]=='}' || expression[i]==']' || expression[i]==')' )
+        {
+            s.pop();
+            while(s.top()!='{' && s.top()!='(' && s.top()!='[' )
+            {
+                s.pop();
+                count++;
+            }
+            s.pop();
+            if(count==0 || count==1)
+                return true;
+        }
+    }
+    return false;
+}    
+        
 
 
+
+//2nd method
 #include<stack>
 bool checkRedundantBrackets(char *input) {
 	// Write your code here
