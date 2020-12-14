@@ -48,7 +48,7 @@ Sample Output 2 :
 
 */
 
-ode* revelist(Node *head){
+Node* revelist(Node *head){
     
     if(head==NULL)
         return NULL;
