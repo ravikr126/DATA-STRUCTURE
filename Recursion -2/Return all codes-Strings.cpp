@@ -22,6 +22,11 @@ kw
 /**************************************/
 //new code by recursion
 
+#include <string.h>
+using namespace std;
+
+
+int getCodes(string input, string output[10000]) {
 
  if(input[0]=='\0')
    {
@@ -54,6 +59,7 @@ k++;
 }
 return k;
 }
+
 
 /*******************************************************/
 //by vector
