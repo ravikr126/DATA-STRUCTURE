@@ -21,7 +21,38 @@ Sample Output 2 :
 12567
 
 ****************************************************************/
+//1st method
 
+int len(char a[])
+{
+    int res = 0;
+    for(int i =0;a[i]!='\0';i++)
+        res++;
+    return res;
+}
+int pow(int m,int n)
+{
+    int res =1;
+    int p =1;
+    for(int i=1;i<=n;i++)
+    {
+        res = res*m;
+    }
+    return res;
+}
+int stringToNumber(char a[]) {
+    int l = len(a);
+    if(l==1)
+        return a[0]-'0';
+    int df = stringToNumber(a+1);
+    int c = a[0]-'0';
+    return c*pow(10,l-1)+df;
+    
+}
+
+
+
+//2nd method
 
 #include <sstream>
 using namespace std; 

@@ -48,6 +48,33 @@ Sample Output 2 :
 
 */
 
+
+Node *kReverse(Node *head, int k)
+{
+	//Write your code here
+      if(k==0 || k==1){
+        return head;
+    }
+    Node* current = head;
+    Node* temp = head;
+    Node* pre = NULL;
+    int i = 0;
+    while(current!=NULL && i<k){
+        temp=current->next;
+        current->next = pre;
+        pre = current;
+        current = temp;
+        i++;
+    }
+    if(temp != NULL){
+        head->next = kReverse(temp,k);
+    }
+    return pre;
+}
+
+
+
+//2nd method
 Node* revelist(Node *head){
     
     if(head==NULL)
