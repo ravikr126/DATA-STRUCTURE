@@ -1,4 +1,3 @@
-/*
 Code : Min Steps to 1
 Send Feedback
 Given a positive integer 'n', find and return the minimum number of steps that 'n' has to take to get reduced to 1. You can perform any one of the following 3 steps:
@@ -31,7 +30,6 @@ For n = 7
 Step 1 :  n = 7 ­- 1 = 6
 Step 2 : n = 6  / 3 = 2 
 Step 3 : n = 2 / 2 = 1  
-
 */
 
 #include<iostream>
@@ -69,11 +67,14 @@ int countStepsToOne(int n){
 
 }
 
-// main code
+
+
+
+//main code
 
 #include <bits/stdc++.h>
 using namespace std;
-
+#include "solution.h"
 
 int main()
 {
