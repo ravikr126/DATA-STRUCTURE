@@ -35,7 +35,7 @@ Sample Output 2:
 
 #include <bits/stdc++.h>
 using namespace std;
-int countBracketReversals(char input[]){
+int countBracketReversals(string input){
 	// Write your code here
     stack <char> s;
     for(int i=0;input[i]!='\0';i++){
