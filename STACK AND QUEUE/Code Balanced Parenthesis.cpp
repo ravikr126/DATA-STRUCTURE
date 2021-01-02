@@ -34,7 +34,7 @@ The initial two pairs of brackets are balanced. But when you see, the opening br
 
 #include <stack>
 using namespace std;
-bool isBalanced(char *exp) {
+bool isBalanced(string exp) {
 	// Write your code here
     stack <char> c;
     
