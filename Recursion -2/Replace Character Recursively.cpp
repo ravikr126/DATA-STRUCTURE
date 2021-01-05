@@ -21,6 +21,7 @@ Sample Output :
 
 xbxcd
 */
+
 void replaceCharacter(char input[], char c1, char c2) {
     /* Don't write main().
      * Don't read input, it is passed as function argument.
