@@ -32,7 +32,7 @@ Following are the three ways:
 
 */
 
-
+//1st approach
 
 #include <iostream>
 using namespace std;
@@ -64,6 +64,30 @@ int allWays(int x, int n) {
     return check(x,n,1,0);
 }
 
+
+//2nd approach
+
+#include<cmath>
+int apw(int num, int power, int n){
+	if(num==0){
+		return 1;
+	}
+	if(num < 0){
+		return 0;
+	}
+	int reducer = pow(n, power);
+	if(reducer > num){
+		return 0;
+	}
+	int x = apw(num-reducer, power, n+1);
+	int y = apw(num, power, n+1);
+	return x+y;
+}
+
+int getAllWays(int a, int b) {
+	// Write your code here
+    return apw(a, b, 1);
+}
 
 
 //main code
