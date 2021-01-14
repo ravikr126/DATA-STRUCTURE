@@ -1,93 +1,87 @@
 /*
-An island is a small piece of land surrounded by water . A group of islands is said to be connected if we can reach from any given island to any other island in the same group . Given N islands (numbered from 1 to N) and two lists of size M (u and v) denoting island u[i] is connected to island v[i] and vice versa . Can you count the number of connected groups of islands.
-Constraints :
-1<=N<=100
-1<=M<=(N*(N-1))/2
-1<=u[i],v[i]<=N
+
+Islands
+Send Feedback
+An island is a small piece of land surrounded by water . A group of islands is said to be connected if we can reach from any given island to any other island in the same group . Given V islands (numbered from 1 to V) and E connections or edges between islands. Can you count the number of connected groups of islands.
 Input Format :
-
-Line 1 : Two integers N and M
-Line 2 : List u of size of M
-Line 3 : List v of size of M
-
-Output Return Format :
-
-The count the number of connected groups of islands
-
-Sample Input :
-
-2 1
-1
-2
-
-Sample Output :
-
+The first line of input contains two integers, that denote the value of V and E.
+Each of the following E lines contains two integers, that denote that there exists an edge between vertex a and b. 
+Output Format :
+Print the count the number of connected groups of islands
+Constraints :
+0 <= V <= 1000
+0 <= E <= (V * (V-1)) / 2
+0 <= a <= V - 1
+0 <= b <= V - 1
+Time Limit: 1 second
+Sample Input 1:
+5 8
+0 1
+0 4
+1 2
+2 0
+2 4
+3 0
+3 2
+4 3
+Sample Output 1:
 1 
 
- */
-
-
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
-void dfs(vector <vector <int> > &adj,int node,bool* visited){
-    visited[node]=true;
+void DFS(bool** graph, int v,bool* visited,int currentVertex){
+    visited[currentVertex]=true;
     
-    for(int i=0;i<adj[node].size();i++)
+    for(int i=0;i<v;++i)
     {
-        if(!visited[adj[node][i]])
-            dfs(adj,adj[node][i],visited);
+        if(graph[currentVertex][i] && !visited[i])
+            DFS(graph,v,visited,i);
     }
+    
 }
 
-int solve(int n,int m,vector<int>u,vector<int>v)
+int getislandgroups(bool** graph ,int v)
 {
-	// Write your code here .
-    vector <vector <int> > adj(n+1);
-    
-    for(int i=0;i<m;i++){
-        adj[u[i]].push_back(v[i]);
-        adj[v[i]].push_back(u[i]);
-    }
-    
-    bool* visited=new bool[n+1];
-    for(int i=1;i<=n;i++)
-        visited[i]=false;
-    
-    int conI=0;
-    
-    for(int i=1;i<=n;i++)
+    bool* visited = new bool[v]();
+    int groupcount =0;
+
+      for(int i=0;i<v;++i)
     {
         if(!visited[i])
         {
-            dfs(adj,i,visited);
-            conI++;
+            DFS(graph,v,visited,i);
+            ++groupcount;
         }
     }
-    return conI;
+    return groupcount;
 }
-
-
-#include<iostream>
-#include<vector>
-using namespace std;
 
 int main()
 {
-	int n,m;
-	vector<int>u,v;
-	cin>>n>>m;
-	for(int i=0;i<m;i++)
-	{
-		int x;
-		cin>>x;
-		u.push_back(x);
-	}
-	for(int i=0;i<m;i++)
-	{
-		int x;
-		cin>>x;
-		v.push_back(x);
-	}
-	cout<<solve(n,m,u,v)<<endl;
+    int v,e;
+    cin>>v>>e;
+    bool** graph = new bool*[v];
+
+    for(int i=0;i<v;i++)
+    {
+        graph[i]=new bool[v]();
+
+    }
+
+    for(int i=0,a,b;i<e;++i)
+    {
+        cin>>a>>b;
+        graph[a][b]=true;
+        graph[b][a]=true;
+    }
+
+    cout<<getislandgroups(graph,v);
+    for(int i=0;i<v;++i)
+    {
+        delete[] graph[i];
+    }
+
+    delete[] graph;
 }
