@@ -11,7 +11,8 @@
 #### 7. <a href="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/TIME%20AND%20SPACE%20COMPLEXITY">Time complexity</a>
 #### 8. <a href="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/TREE">Tree</a>
 #### 9. <a href="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/Graphs">Graphs</a>
-#### 10. <a href="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/Backtracking">Backtracking </a> 
+#### 10. <a href="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/Backtracking">Backtracking </a>
+#### 11. <a href="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/DP%20(1D)">DP1</a>
 ### Anyone in need of help in learning data structures and algorithms are welcome to check this repo. 
 
 ## Contributing
