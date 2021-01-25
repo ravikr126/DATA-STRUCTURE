@@ -13,6 +13,7 @@
 #### 9. <a href="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/Graphs">Graphs</a>
 #### 10. <a href="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/Backtracking">Backtracking </a>
 #### 11. <a href="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/DP%20(1D)">DP1</a>
+  #### 12. <a href="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/DP%20(2D)">DP 2</a>
 ### Anyone in need of help in learning data structures and algorithms are welcome to check this repo. 
 
 ## Contributing
