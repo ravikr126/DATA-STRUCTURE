@@ -16,7 +16,7 @@
 #### 12. <a href="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/DP%20(2D)">DP 2</a>
 #### 13. <a href="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/OOPS">OPPS </a>
 #### 14. <a href ="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/Dynamic%20Allocation">DYNAMIC ALLLOCATION</a>
-### Anyone in need of help in learning data structures and algorithms are welcome to check this repo. 
+### Anyone in need of help in learning data structures and algorithms are welcome to check this repository. 
 
 ## Contributing
 #### To contribute, feel free to fork the repo, raise an issue or simply adding a star will help. 😀😊
