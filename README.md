@@ -19,4 +19,4 @@
 ### Anyone in need of help in learning data structures and algorithms are welcome to check this repository. 
 
 ## Contributing
-#### To contribute, feel free to fork the repo, raise an issue or simply adding a star will help. 😀😊
+#### To contribute, feel free to fork the repository, raise an issue or simply adding a star will help. 😀😊
