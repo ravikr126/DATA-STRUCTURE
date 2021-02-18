@@ -17,6 +17,6 @@
 #### 13. <a href="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/OOPS">OPPS </a>
 #### 14. <a href ="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/Dynamic%20Allocation">DYNAMIC ALLLOCATION</a>
 ### Anyone who like to learn data structures and algorithms are welcome to check this repository. 
-
+This repository contains all basic programs regarding DATA STRUCTURE AND ALGORITHM that every beginner need it and practise it.I included question with sample question for every problem that helps you to understnd everything about the code and question.
 ## Contributing
 #### To contribute, feel free to fork the repository, raise an issue or simply adding a star will help. 😀😊
