@@ -85,7 +85,7 @@ void mergeSort(int input[], int size){
 
 
 #include <iostream>
-#include "solution.h"
+ 
 using namespace std;
 
 int main() {

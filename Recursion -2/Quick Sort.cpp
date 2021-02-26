@@ -63,7 +63,7 @@ void quickSort(int input[], int size) {
 }
 
 #include<iostream>
-#include "Solution.h"
+
 using namespace std;
 
 
