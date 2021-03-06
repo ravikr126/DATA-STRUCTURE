@@ -1,6 +1,6 @@
 # DATA STRUCTURE
 
-#### HOLA🖐 everyone .This is my Data Structure and Algorithim respository. Here you will get all basic to advance level programs in cpp language.
+#### Namaste🙏 everyone .This is my Data Structure and Algorithim respository. Here you will get all basic to advance level programs in cpp language.
 ### The repo contains various Algorithms. It currently contains-
 #### 1. <a href="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/Recursion%20-1">Recursion </a>
 #### 2. <a href="https://github.com/ravikr126/DATA-STRUCTURE/tree/master/Recursion%201b">Recursion 1b<a> 
